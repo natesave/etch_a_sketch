@@ -1,13 +1,16 @@
-//let n = input * input
-
 function createGrid (num) {
-    for (i = 0; i < num; i++) {
-        let container = document.getElementById('gridContainer');
+    let container = document.querySelector('#gridContainer');
+    container.innerHTML = ''; //removes any previously placed grids
+    
+    for (i = 0; i < (num * num); i++) { //creates cells with according to num
         let div = document.createElement('div');
         container.appendChild(div);
         div.setAttribute('id', 'cells');
-        div.textContent = i + 1;
+        container.style.width = ((num * 24) + ((num - 1) * 2)) + "px"; //makes the container the right size for fitting it num x num
         }
 }
 
-createGrid(256)
+function mouseOver () {
+    let hoverCol = document.getElementById('#columns')
+    hoverCol.style.backgroundColor = "grey";
+}

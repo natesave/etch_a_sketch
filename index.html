@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Nate's Etch-a-Sketch Website</h1>
+    <div id="input">Create a grid:</div>
+        <select id="selection" name="gridDimensions" onchange="createGrid(value)">
+            <option value="">Select Dimensions</option>
+            <option value="8">8x8</option>
+            <option value="16">16x16</option>
+            <option value="32">32x32</option>
+        </select>
     <div id="gridContainer"></div>
     <script src="script.js" defer></script>
 </body>
