@@ -1,8 +1,36 @@
+h1 {
+    text-align: center;
+}
+#options {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+#selection {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#error {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: red;
+}
+
 #gridContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 2px;
     margin: 20px;
+    margin: 0 auto;
 }
 
 #cells {
