@@ -1,41 +1,21 @@
 h1 {
     text-align: center;
 }
-#options {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-label {
-    margin-bottom: 15px;
-}
-
-#selection {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
-#error {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    color: red;
-}
 
 #gridContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
-    margin: 20px;
-    margin: 0 auto;
+    display: grid;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
 }
 
-#cells {
-    flex: 0 0 auto;
-    border: 2px solid black;
-    height: 20px;
-    width: 20px;
+.cells {
+    border: 0.5px solid black;
+}
+
+.sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

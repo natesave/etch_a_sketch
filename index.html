@@ -8,20 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Etch-a-Sketch</h1>
-    <div id="options">
-        <label for="dimensions">Create your grid:</label>
-        <input list="diValues" id="selection" name="dimensions" onchange="getValue()"> 
-        <div id="error"></div>
-        <datalist id="diValues">
-            <option value="8"></option>
-            <option value="16"></option>
-            <option value="32"></option>
-            <option value="64"></option>
-            <option value="100">(max)</option>
-        </datalist>
-    </div>
+    <h1>Magic Etch a Sketch Screen</h1>
     <div id="gridContainer"></div>
+    <div class="sliderContainer">
+        <input id="gridDimension" type="range" min="1" max="100" value="50" step="1" onchange="createGrid(value)">
+        <p>Grid Size: <span id="dis"></span></p>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>

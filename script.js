@@ -1,25 +1,26 @@
-function getValue() { //accept numbers only up to 100
-    let val = document.querySelector('#selection').value;
-    if (val <= 100) {
-        createGrid(val);
-    } else {
-        let tooBig = document.querySelector('#error');
-        tooBig.textContent = "VALUE IS TOO LARGE";
-    }
+let slider = document.getElementById("gridDimension");
+let output = document.getElementById("dis");
+output.innerHTML = slider.value;
+
+slider.oninput = function() { //displays value for defining the grid size
+    output.innerHTML = this.value;
 }
 
-function createGrid (num) {
+function createGrid(x) {
     let container = document.querySelector('#gridContainer');
     container.innerHTML = ''; //removes any previously placed grids
-    
-    for (i = 0; i < (num * num); i++) { //creates cells with according to num
+
+    for (i = 0; i < (x * x); i++) {
         let div = document.createElement('div');
         container.appendChild(div);
-        div.setAttribute('id', 'cells');
+        div.setAttribute('class', 'cells');
+        container.style.setProperty('grid-template-columns', 'repeat(' + x + ', 1fr)'); 
+        container.style.setProperty('grid-template-rows', 'repeat(' + x + ', 1fr)');
+        
         div.onmouseover = function() { //changes the color to grey when hovering over a cell
             div.style.backgroundColor = "grey";
             }
-        container.style.width = ((num * 24) + ((num - 1) * 2)) + "px"; //makes the container the right size for fitting it num x num
-        }
+    }
 }
 
+createGrid(50); //cretes default grid when page is loaded
