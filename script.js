@@ -1,16 +1,16 @@
 let slider = document.getElementById('gridDimension');
 let output = document.getElementById('dis');
-output.innerHTML = slider.value;
+output.innerHTML = slider.value + " x " + slider.value;
 
-slider.oninput = function() { //displays value for defining the grid size
-    output.innerHTML = this.value;
+slider.oninput = function() { //displays the grid size value
+    output.innerHTML = this.value + " x " + this.value;
 }
 
 function createGrid(size) {
     let container = document.querySelector('#gridContainer');
     container.innerHTML = ''; //removes any previously placed grids
 
-    for (i = 0; i < (size * size); i++) {
+    for (g = 0; g < (size * size); g++) {
         let div = document.createElement('div');
         container.appendChild(div);
         div.setAttribute('class', 'cells');
@@ -19,6 +19,7 @@ function createGrid(size) {
         container.style.setProperty('grid-template-rows', 'repeat(' + size + ', 1fr)');
     }
     
+    //BLACK HOVER ACTIVE WHEN PAGE LOADS
     let boxes = document.getElementsByClassName('cells');
     let blackHover = function() { //changes color of the cells on hover to black
         this.style.backgroundColor = "rgb(30, 5, 1)";
@@ -31,7 +32,7 @@ function createGrid(size) {
 
 createGrid(50); //creates default grid when page is loaded
 
-let boxes = document.getElementsByClassName('cells');
+let boxes = document.getElementsByClassName('cells'); //select all cells for applying effects of the buttons
 
 //BLACK BUTTON
 let blackBtn = document.querySelector('#toggleBlack');
@@ -44,11 +45,10 @@ let blackHover = function() {
 }
 
 function black() { 
-    for (let o = 0; o < boxes.length; o++) {
-        boxes[o].removeEventListener('mouseover', darkHover);
-        boxes[o].removeEventListener('mouseover', rainbowHover);
-        boxes[o].removeEventListener('mouseover', eraserHover);
-        boxes[o].addEventListener('mouseover', blackHover);
+    for (let b = 0; b < boxes.length; b++) {
+        boxes[b].removeEventListener('mouseover', rainbowHover);
+        boxes[b].removeEventListener('mouseover', eraserHover);
+        boxes[b].addEventListener('mouseover', blackHover);
     }
 }
 
@@ -61,7 +61,7 @@ rainbowBtn.addEventListener('click', () => {
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
     let color = '#';
-    for (let b = 0; b < 6; b++) {
+    for (let c = 0; c < 6; c++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
@@ -72,32 +72,10 @@ let rainbowHover = function() {
 }
 
 function rainbow() { 
-    for (let w = 0; w < boxes.length; w++) {
-        boxes[w].removeEventListener('mouseover', blackHover);
-        boxes[w].removeEventListener('mouseover', darkHover);
-        boxes[w].removeEventListener('mouseover', eraserHover);
-        boxes[w].addEventListener('mouseover', rainbowHover);
-    }
-}
-
-//MAKE DARKER BUTTON
-
-let darkerBtn = document.querySelector('#toggleDarker');
-darkerBtn.addEventListener('click', () => {
-    dark();
-})
-
-let darkHover = function() {
-    this.style.backgroundColor = "rgba(" + (255 - 51) + ", " + (255 - 51) + ", " + (255 - 51) + ")";
-    }
-
-
-function dark() { 
-    for (let b = 0; b < boxes.length; b++) {
-        boxes[b].removeEventListener('mouseover', blackHover);
-        boxes[b].removeEventListener('mouseover', rainbowHover);
-        boxes[b].removeEventListener('mouseover', eraserHover);
-        boxes[b].addEventListener('mouseover', darkHover);
+    for (let r = 0; r < boxes.length; r++) {
+        boxes[r].removeEventListener('mouseover', blackHover);
+        boxes[r].removeEventListener('mouseover', eraserHover);
+        boxes[r].addEventListener('mouseover', rainbowHover);
     }
 }
 
@@ -112,11 +90,10 @@ let eraserHover = function() {
 }
 
 function eraser() { 
-    for (let j = 0; j < boxes.length; j++) {
-        boxes[j].removeEventListener('mouseover', blackHover);
-        boxes[j].removeEventListener('mouseover', rainbowHover);
-        boxes[j].removeEventListener('mouseover', darkHover);
-        boxes[j].addEventListener('mouseover', eraserHover);
+    for (let e = 0; e < boxes.length; e++) {
+        boxes[e].removeEventListener('mouseover', blackHover);
+        boxes[e].removeEventListener('mouseover', rainbowHover);
+        boxes[e].addEventListener('mouseover', eraserHover);
     }
 }
 
@@ -127,8 +104,8 @@ clearBtn.addEventListener('click', () => {
 })
 
 function clearGrid() { //clears grid without loading a new one
-    for (let n = 0; n < boxes.length; n++) {
-        boxes[n].style.backgroundColor = "white";
+    for (let c = 0; c < boxes.length; c++) {
+        boxes[c].style.backgroundColor = "white";
     }
 }
 
@@ -139,11 +116,11 @@ borderBtn.addEventListener('click', () => {
 })
 
 function cellBorder() { 
-    for (let x = 0; x < boxes.length; x++) {
-        if (boxes[x].style.border != "none") {
-        boxes[x].style.border = "none";
+    for (let i = 0; i < boxes.length; i++) {
+        if (boxes[i].style.border != "none") {
+        boxes[i].style.border = "none";
         } else {
-            boxes[x].style.border = "0.5px solid rgb(49, 28, 28)";
+            boxes[i].style.border = "0.5px solid rgb(49, 28, 28)";
         }
     }
 }
