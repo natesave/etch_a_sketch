@@ -9,11 +9,23 @@
 </head>
 <body>
     <h1>Magic Etch a Sketch Screen</h1>
+    
     <div id="gridContainer"></div>
+
+    <div id="btnsContainer">
+    <button type="button" id="toggleBlack">Black</button>
+    <button type="button" id="toggleRainbow">Rainbow</button>
+    <button type="button" id="toggleDarker">Make Darker</button>
+    <button type="button" id="toggleEraser">Eraser</button>
+    <button type="button" id="clearGrid">Clear Grid</button>
+    <button type="button" id="toggleBorder">Cell Borders</button>
+    </div>
+
     <div class="sliderContainer">
         <input id="gridDimension" type="range" min="1" max="100" value="50" step="1" onchange="createGrid(value)">
         <p>Grid Size: <span id="dis"></span></p>
     </div>
-    <script src="script.js" defer></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

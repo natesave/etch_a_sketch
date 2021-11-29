@@ -2,16 +2,31 @@ h1 {
     text-align: center;
 }
 
+/*body {
+    background-image: url('img/background.jpeg');
+    background-repeat: no-repeat;
+}*/
+
 #gridContainer {
     display: grid;
     margin: auto;
     height: 500px;
     width: 500px;
-    border: 1px solid black;
+    border: 1px solid rgb(212, 212, 212);
+}
+
+#btnsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .cells {
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(49, 28, 28);
+    background-color: white;
+    /*background-color: rgb(189, 171, 159);*/
 }
 
 .sliderContainer {
