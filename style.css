@@ -1,11 +1,20 @@
 h1 {
     text-align: center;
+    color: rgb(217,176,109, 0.8);
+    font-family: 'Dancing Script', cursive;
+    padding: 15px;
+    margin: 0;
+    text-shadow: 0px 1px 1px rgb(253, 244, 194), 0px 2px 2px rgb(0, 0, 0);
 }
 
-/*body {
-    background-image: url('img/background.jpeg');
-    background-repeat: no-repeat;
-}*/
+#outerBox {
+    background-color: rgb(214,57,63);
+    margin: 30px 65px 30px 65px;
+    box-shadow: inset 5px 5px 10px #f3aead, 5px 10px 8px #888888;
+    border-radius: 10px;
+    width: 650px;
+    height: 680px;
+}
 
 #gridContainer {
     display: grid;
@@ -18,15 +27,9 @@ h1 {
 #bottomSettings {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 60px;
-    width: 500px;
-    margin: 10px auto auto auto;
-}
-
-#bottomText {
-    margin: 0 174px 0 174px;
+    margin: 10px 25px 10px 25px;
 }
 
 #btnsContainer {
@@ -37,6 +40,25 @@ h1 {
     margin-top: 15px;
 }
 
+#leftBtns, #rightBtns {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+#toggleBlack, #toggleRainbow, #toggleEraser, #clearGrid, #toggleBorder {
+    border-radius: 100%;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 14px;
+    width: 65px;
+    height: 60px;
+}
+
+button:active {
+    background-color: rgb(212, 212, 212);
+}
+
 .cells {
     border: 0.5px solid rgb(49, 28, 28);
     background-color: white;
@@ -44,7 +66,22 @@ h1 {
 }
 
 .sliderContainer {
+    color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    font-size: 14px;
+    margin: 15px auto auto auto;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 30px;
+    background: #d9dbdd;
+    border-radius: 10px;
+    border:1px solid rgb(0, 0, 0);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background:rgb(255, 255, 255);
+    border: 2px solid black;
 }
