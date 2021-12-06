@@ -12,19 +12,18 @@
         <h1>Etch A Sketch Screen</h1>
         <div id="gridContainer"></div>
         <div id="bottomSettings">
-            <div id="leftBtns">
+            <div id="btnsContainer">
                 <button type="button" id="toggleBlack">Black</button>
                 <button type="button" id="toggleRainbow">Rainbow</button>
                 <button type="button" id="toggleEraser">Eraser</button>
-            </div>
-            <div class="sliderContainer">
-                <input id="gridDimension" type="range" min="1" max="100" value="50" step="1" onchange="createGrid(value)">
-                <p>Grid Size: <span id="dis"></span></p>
-            </div>
-            <div id="rightBtns">
                 <button type="button" id="clearGrid">Clear Grid</button>
                 <button type="button" id="toggleBorder">Borders</button>
             </div>
+            <div class="sliderContainer">
+                <input id="gridDimension" type="range" min="1" max="100" value="50" step="1" onchange="createGrid(value)">
+                <p class="sliderText">Grid Size: <span id="dis"></span></p>
+            </div>
+
         </div>
     </div>
     <script src="script.js"></script>

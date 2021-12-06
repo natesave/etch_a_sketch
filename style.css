@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     text-align: center;
     color: rgb(217,176,109, 0.8);
@@ -9,6 +14,7 @@ h1 {
 
 #outerBox {
     background-color: rgb(214,57,63);
+    flex: 0 0 auto;
     margin: 30px 65px 30px 65px;
     box-shadow: inset 5px 5px 10px #f3aead, 5px 10px 8px #888888;
     border-radius: 10px;
@@ -29,7 +35,7 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 25px 10px 25px;
+    margin: 10px 40px 10px 40px;
 }
 
 #btnsContainer {
@@ -37,13 +43,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 15px;
-}
-
-#leftBtns, #rightBtns {
-    display: flex;
-    align-items: center;
-    gap: 3px;
+    margin-top: 15px 40px 15px 40px;
 }
 
 #toggleBlack, #toggleRainbow, #toggleEraser, #clearGrid, #toggleBorder {
@@ -56,13 +56,16 @@ h1 {
 }
 
 button:active {
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(255, 208, 208);
 }
 
 .cells {
     border: 0.5px solid rgb(49, 28, 28);
     background-color: white;
-    /*background-color: rgb(189, 171, 159);*/
+}
+
+.sliderText {
+    margin: 20px 0 0 0;
 }
 
 .sliderContainer {
@@ -70,18 +73,33 @@ button:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: space-between;
     font-size: 14px;
     margin: 15px auto auto auto;
 }
 
+input[type=range]{
+    -webkit-appearance: none;
+    background: rgb(214,57,63);
+}
+
 input[type=range]::-webkit-slider-runnable-track {
-    width: 30px;
-    background: #d9dbdd;
+    -webkit-appearance: none;
+    background: rgb(212, 212, 212);
+    height: 10px;
+    width: 100%;
     border-radius: 10px;
-    border:1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
 }
 
 input[type=range]::-webkit-slider-thumb {
-    background:rgb(255, 255, 255);
+    -webkit-appearance: none;
     border: 2px solid black;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    margin-top: -8px;
 }
