@@ -33,7 +33,7 @@ h1 {
 #bottomSettings {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 10px 40px 10px 40px;
 }
@@ -43,7 +43,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 15px 40px 15px 40px;
+    margin-top: 15px 0 15px 0;
 }
 
 #toggleBlack, #toggleRainbow, #toggleEraser, #clearGrid, #toggleBorder {
@@ -75,7 +75,7 @@ button:active {
     align-items: center;
     align-content: space-between;
     font-size: 14px;
-    margin: 15px auto auto auto;
+    margin: 15px 0 auto 30px;
 }
 
 input[type=range]{
